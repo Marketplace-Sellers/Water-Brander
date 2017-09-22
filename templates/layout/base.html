@@ -8,6 +8,7 @@
         <link href="{{ head.favicon }}" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         {{{stylesheet '/assets/css/theme.css'}}}
+        {{{stylesheet '/assets/css/mps-custom.css'}}}
         {{ getFontsCollection }}
         <script src="{{cdn 'assets/modernizr-custom.js'}}"></script>
 
@@ -29,7 +30,9 @@
         {{/if}}
 
         {{> components/common/header }}
-        {{> components/common/body }}
+        <div class="mps-body">
+        		{{> components/common/body }}
+        </div>
         {{> components/common/footer }}
 
         <script>window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";</script>

@@ -1,5 +1,11 @@
 <nav class="navUser">
     {{> components/common/currency-selector}}
+    
+	 {{#if settings.phone_number}}
+    	<ul class="navUser-section navUser-section--alt navUser-phone">
+    		<li class="navUser-item"><span>Contact Us: <strong>{{lang 'footer.call_us' phone_number=settings.phone_number}}</strong></span></li>
+    	</ul>
+	 {{/if}}
 
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
@@ -15,18 +21,18 @@
                 </div>
             </li>
         {{/if}}
-        <li class="navUser-item">
+        <!-- <li class="navUser-item">
             <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav>{{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span></a>
-        </li>
+        </li> -->
         {{#if theme_settings.social_icon_placement_top}}
             <li class="navUser-item navUser-item--social">
                 {{> components/common/social-links}}
             </li>
             <li class="navUser-item navUser-item--divider">|</li>
         {{/if}}
-        <li class="navUser-item">
+        <!-- <li class="navUser-item">
             <a class="navUser-action navUser-action--quickSearch" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false">{{lang 'common.search'}}</a>
-        </li>
+        </li> -->
         {{#if settings.gift_certificates_enabled}}
             <li class="navUser-item">
                 <a class="navUser-action" href="{{urls.gift_certificate.purchase}}">{{lang 'common.gift_cert'}}</a>
@@ -50,9 +56,11 @@
                 data-dropdown="cart-preview-dropdown"
                 data-options="align:right"
                 href="{{urls.cart}}">
-                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}</span> <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span>
+                <span class="navUser-item-cartLabel">{{lang 'common.cart'}}:</span>
+                <img src="{{cdn 'img/mps-imges/icon_minicart.png'}}" alt="">
+                <strong>{{cart.sub_total.formatted}}</strong>
+                <!-- <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity">{{cart.quantity}}</span> -->
             </a>
-
             <div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
         </li>
     </ul>

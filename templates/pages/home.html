@@ -11,6 +11,7 @@ blog:
     recent_posts:
         limit: {{theme_settings.homepage_blog_posts_count}}
 ---
+
 {{#partial "hero"}}
     {{#if carousel}}
         {{> components/carousel}}
@@ -25,17 +26,206 @@ blog:
     {{/each}}
 
 <div class="main full">
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
 
-    {{#if products.top_sellers}}
+	<div class="row">
+		<div class="mps-center">
+			<h6>BOTTLED WATER WITH YOUR CUSTOM DESIGN</h6>
+			<h2 class="oversize">PERFECT FOR ANY EVENT</h2>
+			<span class="mps-underline"></span>
+		</div>
+		<div class="span4">
+			<div class="mps-industry-list">
+				<h3>INDUSTRIES & EVENTS</h3>
+				<ul>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_weddings.png'}}" alt=""></span> WEDDINGS</li>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_corporate.png'}}" alt=""></span> CORPORATE</li>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_doctors.png'}}" alt=""></span> DOCTORS</li>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_attorneys.png'}}" alt=""></span> ATTORNEYS</li>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_parties.png'}}" alt=""></span> PARTIES</li>
+					<li class=""><span class="mps-icon"><img src="{{cdn 'img/mps-imges/icon_funerals.png'}}" alt=""></span> FUNERALS</li>
+				</ul>
+				<p><a href="" class="button">Learn More</a></p>
+			</div>
+		</div>
+		<div class="span8 last">		
+    		{{#if products.featured}}
+        		{{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    		{{/if}}
+		</div>
+	</div>
+
+
+
+    <!-- {{#if products.top_sellers}}
         {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
+    {{/if}} -->
 
-    {{#if products.new}}
+    <!-- {{#if products.new}}
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
+    {{/if}} -->
+    
+	{{#if banners.top}}
+	<div class="banners mps-banner-top" data-banner-location="top">
+		<div class="banner">
+			{{{limit banners.top 1}}}
+			
+        	<h6>Pure spring water straight from the source</h6>
+        	<h2 class="oversize">Quality at its finest</h2>
+        	<span class="mps-underline"></span>
+        	<article class="mps-banner-top-items">
+        		<div class="mps-banner-top-item1">
+        			<div class="mps-banner-align">
+        				<div class="mps-banner-text">
+        					<img src="{{cdn 'img/mps-imges/icon_waterquality.png'}}" alt="">
+        					<h6>Award winning</h6>
+        					<h2 class="oversize">Water Quality</h2>
+        					<span class="mps-underline"></span>
+        					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pulvinar ante et nisl scelerisque.</p>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="mps-banner-top-item2">
+        			<div class="mps-banner-align">
+        				<div class="mps-banner-text">
+        					<h3>GREAT TASTE IS <br>OUR TOP PRIORITY</h3>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="mps-banner-top-item3">
+        			<div class="mps-banner-align">
+        				<div class="mps-banner-text">
+        					<h3>ANALYSIS</h3>
+        				</div>
+        			</div>
+        		</div>
+        	</article>
+		</div>
+	</div>
+	{{/if}}
+	
+	
+	<div class="mps-testimonials">
+      <h6>CUSTOMER SATISFACTION GUARANTEED</h6>
+      <h2 class="oversize">SEE WHAT OTHERS ARE SAYING</h2>
+      <span class="mps-underline"></span>
+		<div class="mps-testimonials-slider"
+    		data-slick='{
+        		"dots": true,
+        		"arrows": false,
+        		"infinite": false,
+        		"mobileFirst": true,
+        		"slidesToShow": 1,
+        		"slidesToScroll": 1,
+        		"responsive": [
+            		{
+                		"breakpoint": 1260,
+                		"settings": {
+                    		"slidesToScroll": 4,
+                    		"slidesToShow": 4
+                		}
+            		},
+            		{
+                		"breakpoint": 779,
+                		"settings": {
+                    		"slidesToScroll": 3,
+                    		"slidesToShow": 3
+                		}
+            		},
+            		{
+                		"breakpoint": 479,
+                		"settings": {
+                    		"slidesToScroll": 2,
+                    		"slidesToShow": 2
+                		}
+            		}
+        		]
+    		}'
+		>
+			<article class="mps-testimonial">
+				<h5>Title 1 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars4"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 2 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars2"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 3 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars5"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 4 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars1"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 5 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars0"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 6 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars3"></span>
+				<h5>Name here</h5>
+			</article>
+			<article class="mps-testimonial">
+				<h5>Title 7 Goes Here</h5>
+				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam ipsum dolor sit  amet consecte adipisicing usod tempor elit incidid labore dolore.</p>
+				<span class="mps-stars mps-stars4"></span>
+				<h5>Name here</h5>
+			</article>
+		</div>
+	</div>
+	<div style="clear:both;"></div>
+	
+	
+	{{#if banners.bottom}}
+	<div class="banners mps-banner-bottom" data-banner-location="bottom">
+    	<div class="banner">
+        	{{{limit banners.bottom 1}}}
+        	
+        	<h6>How It Works</h6>
+        	<h2 class="oversize">We've made it as easy as 123</h2>
+        	<span class="mps-underline"></span>
+        	<div class="row">
+        		<article class="span4">
+        			<div class="maxwidth">
+        				<img src="{{cdn 'img/mps-imges/howitworks1.png'}}" alt="">
+        				<h3>CHOOSE BOTTLE SIZE</h3>
+        				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam</p>
+        			</div>
+        		</article>
+        		<article class="span4">
+        			<div class="maxwidth">
+        				<img src="{{cdn 'img/mps-imges/howitworks2.png'}}" alt="">
+        				<h3>CUSTOMIZE LABEL</h3>
+        				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam</p>
+        			</div>
+        		</article>
+        		<article class="span4 last">
+        			<div class="maxwidth">
+        				<img src="{{cdn 'img/mps-imges/howitworks3.png'}}" alt="">
+        				<h3>COMPLETE ORDER</h3>
+        				<p>Lorem ipsum dolor amet adipisicing eiusmod tempor incididunt magna aliq enim nim veniam</p>
+        			</div>
+        		</article>
+        	</div>
+        	<p><a href="" class="button">GET STARTED ON YOUR LABEL</a></p>
+        	
+    	</div>
+	</div>
+	{{/if}}
+
 </div>
 {{/partial}}
+
 {{> layout/base}}
